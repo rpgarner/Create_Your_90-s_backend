@@ -23,7 +23,16 @@ module.exports = (sequelize, DataTypes) => {
     releaseDate: DataTypes.STRING,
     description: DataTypes.STRING,
     images: DataTypes.STRING,
-    likes: DataTypes.INTEGER
+    likes: DataTypes.INTEGER,
+    userId: {
+      type: DataTypes.INTEGER,
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
+      references: {
+        model: 'users',
+        Key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Post',

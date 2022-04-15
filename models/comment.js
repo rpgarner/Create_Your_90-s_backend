@@ -20,9 +20,44 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Comment.init({
-    description: DataTypes.STRING,
-    likes: DataTypes.INTEGER,
-    name: DataTypes.STRING
+    description: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    likes: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
+      validate: {
+        min:0
+      }
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      field: 'userId',
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
+      references: {
+        model: 'users',
+        key: 'id'
+      }
+    },
+    postId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      field: 'postId',
+      onDelete: 'CASCADE',
+      onUpdate: 'CASCADE',
+      references: {
+        model: 'posts',
+        key: 'id'
+      }
+    }
   }, {
     sequelize,
     modelName: 'Comment',
