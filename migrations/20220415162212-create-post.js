@@ -1,39 +1,59 @@
-'use strict';
+"use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('Posts', {
+    await queryInterface.createTable("Posts", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       postName: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       releaseDate: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       description: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       images: {
-        type: Sequelize.STRING
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       likes: {
-        type: Sequelize.INTEGER
+        allowNull: false,
+        type: Sequelize.INTEGER,
+      },
+      userId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        field: "userId",
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+        reference: {
+          model: "users",
+          key: "id",
+        },
       },
       createdAt: {
+        field: "created_at",
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
       },
       updatedAt: {
+        field: "updated_at",
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+        defaultValue: new Date(),
+      },
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('Posts');
-  }
+    await queryInterface.dropTable("Posts");
+  },
 };
