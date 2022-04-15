@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Comments", {
+    await queryInterface.createTable("comments", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -20,26 +20,28 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      userId:{
+      userId: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        field: 'userId',
-        onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
+        field: "userId",
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
         reference: {
-          model: 'users',
-          key:'id'
+          model: "users",
+          key: "id",
         },
-        postId:{
-          type: Sequelize.INTEGER,
-          allowNull: false,
-          field: 'postId',
-          onDelete: 'CASCADE',
-          onUpdate: 'CASCADE',
-          reference: {
-            model: 'posts',
-            key:'id'
-          },
+      },
+      postId: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        field: "postId",
+        onDelete: "CASCADE",
+        onUpdate: "CASCADE",
+        reference: {
+          model: "posts",
+          key: "id",
+        },
+      },
       createdAt: {
         field: "created_at",
         allowNull: false,
@@ -55,6 +57,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Comments");
+    await queryInterface.dropTable("comments");
   },
 };
