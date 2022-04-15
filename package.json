@@ -1,0 +1,31 @@
+{
+  "name": "show_your_90-s_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rpgarner/show_your_90-s_backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rpgarner/show_your_90-s_backend/issues"
+  },
+  "homepage": "https://github.com/rpgarner/show_your_90-s_backend#readme",
+  "dependencies": {
+    "body": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.3",
+    "morgan": "^1.10.0",
+    "parser": "^0.1.4",
+    "pg": "^8.7.3",
+    "sequelize": "^6.19.0"
+  }
+}
