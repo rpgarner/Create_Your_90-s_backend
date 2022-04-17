@@ -27,7 +27,7 @@ module.exports = {
           postName: "Easy Bake Oven",
           releaseDate: "1963",
           description:
-            "The original Easy-Bake Oven was invented in 1963, but it became all the rage in the 90s when it was rereleased by Hasbro. Kids may be starring on the Food Network in shows like “Kids Baking Championship” and “Kids Cookoff,” but there’s still something timeless about this retro 90s toy.",
+            "The original Easy-Bake Oven was invented in 1963, but it became all the rage in the 90s when it was rereleased by Hasbro. ",
           images: "https://i.ebayimg.com/images/g/wzcAAOSwwllgzBxj/s-l300.jpg",
           likes: 13,
           userId: 3,
@@ -36,7 +36,7 @@ module.exports = {
           postName: "Walkie-Talkie",
           releaseDate: "1941",
           description:
-            "The first handheld walkie-talkie was the AM SCR-536 transceiver from 1941, also made by Motorola, named the Handie-Talkie (HT). This popular 90s toy originated in the 1940s and was used during the Second World War. In the 80’s, the first official “walkie talkie” by Fisher Price became popularized for contemporary use. Once the 90s hit, the walkie talkie was still considered a favorite spy toy to play with. ",
+            "The first handheld walkie-talkie was the AM SCR-536 transceiver from 1941, also made by Motorola, named the Handie-Talkie (HT).  ",
           images:
             "https://i.pinimg.com/originals/ef/68/3b/ef683b0bc6c22e28726062c64fa79d12.jpg",
           likes: 9,
@@ -74,7 +74,7 @@ module.exports = {
           postName: "Bop It ",
           releaseDate: "1996",
           description:
-            "Bop It was a handheld electronic toy that first came out in 1996, but is so popular that new and improved versions are still on the shelves today. The original game came with just three instructions: bop it, twist it and pull it and you could compete against yourself, or others for the highest score.",
+            "Bop It was a handheld electronic toy that first came out in 1996, but is so popular that new and improved versions are still on the shelves today. ",
           images:
             "https://upload.wikimedia.org/wikipedia/commons/b/bc/Bop_it.jpg",
           likes: 9,
@@ -84,7 +84,7 @@ module.exports = {
           postName: "Hungry Hungry Hippos",
           releaseDate: "1978",
           description:
-            "Hungry Hungry Hippos was one of the best real-life multiplayer games of the 90s and was super addictive. Players had to move their hippos head forward in order to eat as many of the plastic balls as possible. The person with the most balls at the end of the game was the hippo champion, or the fullest hippos something along those lines.",
+            "Hungry Hungry Hippos was one of the best real-life multiplayer games of the 90s and was super addictive. ",
           images:
             "https://retrododo.com/wp-content/uploads/2020/11/hungry-hippos.jpg",
           likes: 7,
@@ -124,7 +124,7 @@ module.exports = {
           postName: "AOL instant messenger",
           releaseDate: "may 1997",
           description:
-            "AIM was popular by the late 1990s, in United States and other countries, and was the leading instant messaging application in that region into the following decade. Teens and college students were known to use the messengers away message feature to keep in touch with friends",
+            "AIM was popular by the late 1990s, in United States and other countries, and was the leading instant messaging application in that region into the following decade. ",
           images:
             "https://assets-global.website-files.com/6179a66d5f9cc70024c61878/6179a66e5f9cc70024c6ce53_is-aol-still-around2%20(1)%20(1).jpeg",
           likes: 22,
@@ -224,6 +224,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    // return queryInterface.bulkDelete("users", null, {});
+    return queryInterface.bulkDelete("users", null, {});
   },
 };

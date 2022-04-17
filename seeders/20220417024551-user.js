@@ -5,15 +5,16 @@ module.exports = {
     return queryInterface.bulkInsert(
       "users",
       [
-        {
-          firstName: "bob",
-          lastName: "wright",
-          userName: "bobby",
-          about: "I really like to write",
-          email: "dem@demo.com",
-          password: "1234",
-
-        },
+        // {
+        //   firstName: "Jane",
+        //   lastName: "Doe",
+        //   userName: "JDoe",
+        //   about: "jane likes does",
+        //   email: "demo@demo.com",
+        //   password: "1234",
+        //   // createdAt: new Date(),
+        //   // updatedAt: new Date(),
+        // },
         // {
         //   firstName: "Jackson",
         //   lastName: "Michael",
@@ -21,7 +22,8 @@ module.exports = {
         //   about: "Micahel Jackson",
         //   email: "Michael@jackson.com",
         //   password: "1234",
-
+        //   // createdAt: new Date(),
+        //   // updatedAt: new Date(),
         // },
         // {
         //   firstName: "Ocelot",
@@ -30,7 +32,8 @@ module.exports = {
         //   about: "I like cats",
         //   email: "catLover@demo.com",
         //   password: "1234",
-
+        //   // createdAt: new Date(),
+        //   // updatedAt: new Date(),
         // },
         // {
         //   firstName: "Steve",
@@ -39,7 +42,8 @@ module.exports = {
         //   about: "Lets get dirty",
         //   email: "Steve@Jobs.com",
         //   password: "1234",
-
+        //   // createdAt: new Date(),
+        //   // updatedAt: new Date(),
         // },
         // {
         //   firstName: "Barbara",
@@ -48,8 +52,8 @@ module.exports = {
         //   about: "has really dry hands",
         //   email: "Barb@rocks.com",
         //   password: "1234",
-          
-   
+        //   // createdAt: new Date(),
+        //   // updatedAt: new Date(),
         // },
       ],
       {}
