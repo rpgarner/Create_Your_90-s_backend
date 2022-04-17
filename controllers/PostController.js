@@ -30,8 +30,8 @@ const GetPopularPosts = async (req, res) => {
 
 const GetRecentPosts = async (req, res) => {
   try {
-    const recents = await Post.findAll({ order: [["created_at", "DESC"]] });
-    res.send(recents);
+    const recents = await Post.findAll({ order: [["createdAt", "DESC"]] });
+    res.json(recents);
   } catch (error) {
     throw error;
   }
@@ -48,9 +48,9 @@ const GetPostDetails = async (req, res) => {
 
 const CreatePost = async (req, res) => {
   try {
-    let ownerId = parseInt(req.params.user_id);
+    let userId = parseInt(req.params.user_id);
     let postBody = {
-      ownerId,
+      userId,
       ...req.body,
     };
     const newPost = await Post.create(postBody);
@@ -76,7 +76,7 @@ const UpdatePost = async (req, res) => {
 const DeletePost = async (req, res) => {
   try {
     let postId = parseInt(req.params.post_id);
-    let DeletedTwert = await Post.destroy({ where: { id: postId } });
+    await Post.destroy({ where: { id: postId } });
     res.send({ message: `Post with id ${postId} has been deleted` });
   } catch (error) {
     throw error;
