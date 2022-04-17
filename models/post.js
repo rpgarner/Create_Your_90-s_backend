@@ -19,12 +19,12 @@ module.exports = (sequelize, DataTypes) => {
   Post.init(
     {
       postName: {
-        type:DataTypes.STRING,
-        allowNull: false
+        type: DataTypes.STRING,
+        allowNull: false,
       },
       releaseDate: {
-       type: DataTypes.STRING,
-       allowNull: false,
+        type: DataTypes.STRING,
+        allowNull: false,
       },
       description: {
         type: DataTypes.STRING,
@@ -37,11 +37,15 @@ module.exports = (sequelize, DataTypes) => {
       likes: {
         type: DataTypes.INTEGER,
         allowNull: false,
+        defaultValue: 0,
+        validate: {
+          min: 0,
+        },
       },
       userId: {
         allowNull: false,
         type: DataTypes.INTEGER,
-        field: 'userId',
+        field: "userId",
         onDelete: "CASCADE",
         onUpdate: "CASCADE",
         references: {
