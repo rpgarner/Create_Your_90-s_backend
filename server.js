@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const AppRouter = require("./routes/AppRouter");
 
 //////////////variables////////
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const app = express();
 
 ////////////////MiddleWare////////////////////
