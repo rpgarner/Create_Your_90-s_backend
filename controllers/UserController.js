@@ -1,9 +1,8 @@
-const { User, Post } = require('../models')
+const { User, Post } = require("../models");
 
 /////////For auth//////////////
 
 // const middleware = require('../middleware')
-
 
 // const Login = async (req, res) => {
 //   try {
@@ -44,31 +43,27 @@ const { User, Post } = require('../models')
 //   Register
 // }
 
-
-
-
-
 const GetProfiles = async (req, res) => {
   try {
-    const users = await User.findAll()
-    res.send(users)
+    const users = await User.findAll();
+    res.send(users);
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 const GetUserProfile = async (req, res) => {
   try {
     const userAndPosts = await User.findByPk(req.params.user_id, {
-      include: [{ model: Post, as: 'posts' }]
-    })
-    res.send(userAndPosts)
+      include: [{ model: Post, as: "posts" }],
+    });
+    res.send(userAndPosts);
   } catch (error) {
-    throw error
+    throw error;
   }
-}
+};
 
 module.exports = {
   GetProfiles,
-  GetUserProfile
-}
+  GetUserProfile,
+};
