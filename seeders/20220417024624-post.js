@@ -12,7 +12,7 @@ module.exports = {
           images:
             "https://m.media-amazon.com/images/I/819ZUKGJraS._AC_SX425_.jpg",
           likes: 31,
-          userId: 1,
+          userId: 1,   
         },
         {
           postName: "Lava Lamp",
