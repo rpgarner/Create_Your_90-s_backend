@@ -5,7 +5,7 @@ const { Comment, Post, User } = require("../models");
 
 const getAllComments = async (req, res) => {
   try {
-    const getComments = await Comment.findAlsswwl({
+    const getComments = await Comment.findAll({
       order: [["createdAt", "DESC"]],
     });
     res.json(getComments);
