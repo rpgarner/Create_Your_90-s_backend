@@ -40,8 +40,19 @@ const UpdateComment = async (req, res) => {
   }
 };
 
+const DeleteComment = async (req, res) => {
+  try {
+    let commentId = parseInt(req.params.comment_id);
+    await Comment.destroy({ where: { id: commentId } });
+    res.send({ message: `Comment with id ${commentId} has been deleted` });
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   getAllComments,
   newComment,
   UpdateComment,
+  DeleteComment,
 };
