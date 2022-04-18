@@ -41,7 +41,7 @@ const GetRecentPosts = async (req, res) => {
 
 const GetPostDetails = async (req, res) => {
   try {
-    const postDetails = await Post.findByPk(req.params.post_id);
+    const postDetails = await Post.findByPk(req.params.postId);
     res.send(postDetails);
   } catch (error) {
     throw error;
