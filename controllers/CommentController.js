@@ -1,14 +1,27 @@
 ////////////////////imports//////////////////
-const { Comment, User } = require("../models");
+const { Comment, Post, User } = require("../models");
 
 ////////////////////controller variables//////////////////
 
 const getAllComments = async (req, res) => {
   try {
-    const getComments = await Comment.findAll({
+    const getComments = await Comment.findAlsswwl({
       order: [["createdAt", "DESC"]],
     });
     res.json(getComments);
+  } catch (error) {
+    throw error;
+  }
+};
+
+const GetCommentDetails = async (req, res) => {
+  try {
+    const postId = parseInt(req.params.post_id);
+    const CommentDetails = await Comment.findOne({
+      where: { postId: postId },
+      include: [{ model: Post }],
+    });
+    res.send(CommentDetails);
   } catch (error) {
     throw error;
   }
@@ -57,6 +70,7 @@ const DeleteComment = async (req, res) => {
 
 module.exports = {
   getAllComments,
+  GetCommentDetails,
   newComment,
   UpdateComment,
   DeleteComment,
