@@ -2,7 +2,9 @@ const { Comment, User } = require("../models");
 
 const getAllComments = async (req, res) => {
   try {
-    const getComments = await Comment.findAll({ order: [["createdAt", "DESC"]] });
+    const getComments = await Comment.findAll({
+      order: [["createdAt", "DESC"]],
+    });
     res.json(getComments);
   } catch (error) {
     throw error;
@@ -25,7 +27,21 @@ const newComment = async (req, res) => {
   }
 };
 
+const UpdateComment = async (req, res) => {
+  try {
+    let commentId = parseInt(req.params.comment_id);
+    let updatedComment = await Comment.update(req.body, {
+      where: { id: commentId },
+      returning: true,
+    });
+    res.send(updatedComment);
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   getAllComments,
   newComment,
+  UpdateComment,
 };
