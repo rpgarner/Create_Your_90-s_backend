@@ -2,8 +2,8 @@ const { Comment, User } = require("../models");
 
 const getAllComments = async (req, res) => {
   try {
-    const getComments = Comment.findAll();
-    res.send(getComments);
+    const getComments = await Comment.findAll({ order: [["createdAt", "DESC"]] });
+    res.json(getComments);
   } catch (error) {
     throw error;
   }
@@ -11,11 +11,11 @@ const getAllComments = async (req, res) => {
 
 const newComment = async (req, res) => {
   try {
-    let ownerId = parseInt(req.params.user_id);
+    let userId = parseInt(req.params.user_id);
     let postId = parseInt(req.params.post_id);
     let CommentBody = {
-      ownerId: ownerId,
-      postId: postId,
+      userId,
+      postId,
       ...req.body,
     };
     let createComment = await Comment.create(CommentBody);
@@ -24,10 +24,7 @@ const newComment = async (req, res) => {
     throw error;
   }
 };
-// Work Here
-// Work Here
 
-// Dont forget to export your functions
 module.exports = {
   getAllComments,
   newComment,
