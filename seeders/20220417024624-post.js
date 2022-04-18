@@ -118,7 +118,7 @@ module.exports = {
           images:
             "https://www.giantfreakinrobot.com/wp-content/uploads/2021/03/blockbuster-video-logo.png",
           likes: "9",
-          userId: "4",
+          userId: 4,
         },
         {
           postName: "AOL instant messenger",
