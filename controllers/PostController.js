@@ -1,26 +1,28 @@
+////////////////////imports//////////////////
+
 const { User, Post, Comment } = require("../models");
+
+////////////////////controller variables//////////////////
 
 const { Op, literal, fn, col } = require("sequelize");
 
 const GetPopularPosts = async (req, res) => {
   try {
     const popular = await Post.findAll({
-      order: [["likes", "DESC"]], //Order By Likes in descending order
+      order: [["likes", "DESC"]],
       attributes: [
-        // Select Specific Attributes
         "id",
         "description",
         "likes",
         "postName",
         "releaseDate",
-        "images"[(fn("COUNT", col("comments.id")), "commentCount")], //Count amount of associated comments
+        "images"[(fn("COUNT", col("comments.id")), "commentCount")],
       ],
-      where: { likes: { [Op.gt]: 3 } }, // Where likes is greater than 3000
+      where: { likes: { [Op.gt]: 3 } },
       include: [
         { model: User, attributes: ["userName", "id"] },
-        { model: Comment, attributes: [] }, //Leave attributes empty, we only need the model to execute the count
+        { model: Comment, attributes: [] },
       ],
-      //   group: ["user.Id", "post.id"], // Group the information by it's respective id
     });
     res.send(popular);
   } catch (error) {
@@ -82,6 +84,8 @@ const DeletePost = async (req, res) => {
     throw error;
   }
 };
+
+////////////////////exports//////////////////
 
 module.exports = {
   GetPopularPosts,

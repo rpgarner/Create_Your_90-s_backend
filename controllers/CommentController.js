@@ -1,4 +1,7 @@
+////////////////////imports//////////////////
 const { Comment, User } = require("../models");
+
+////////////////////controller variables//////////////////
 
 const getAllComments = async (req, res) => {
   try {
@@ -49,6 +52,8 @@ const DeleteComment = async (req, res) => {
     throw error;
   }
 };
+
+////////////////////exports//////////////////
 
 module.exports = {
   getAllComments,
