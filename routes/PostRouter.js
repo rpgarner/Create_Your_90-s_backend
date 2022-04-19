@@ -9,7 +9,13 @@ Router.post(
     middleware.stripToken,
     middleware.verifyToken, 
     controllers.CreatePost);
-Router.put("/:post_id", controllers.UpdatePost);
-Router.delete("/:post_id", controllers.DeletePost);
+Router.put("/:post_id", 
+    middleware.stripToken,
+    middleware.verifyToken, 
+    controllers.UpdatePost);
+Router.delete("/:post_id",
+    middleware.stripToken,
+    middleware.verifyToken, 
+    controllers.DeletePost);
 
 module.exports = Router;
