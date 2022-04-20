@@ -49,6 +49,7 @@ const GetPostDetails = async (req, res) => {
 };
 
 const CreatePost = async (req, res) => {
+  console.log(req.body)
   try {
     let userId = parseInt(req.params.user_id);
     let postBody = {
