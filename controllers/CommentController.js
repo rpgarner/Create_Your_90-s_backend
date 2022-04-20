@@ -27,6 +27,19 @@ const GetCommentDetails = async (req, res) => {
   }
 };
 
+const GetAllCommentsByPostPk = async (req, res) => {
+  try {
+    const postId = parseInt(req.params.post_id);
+    const CommentDetails = await Comment.findAll({
+      where: { postId: postId },
+      include: [{ model: Post }],
+    });
+    res.send(CommentDetails);
+  } catch (error) {
+    throw error;
+  }
+};
+
 const newComment = async (req, res) => {
   try {
     let userId = parseInt(req.params.user_id);
@@ -71,6 +84,7 @@ const DeleteComment = async (req, res) => {
 module.exports = {
   getAllComments,
   GetCommentDetails,
+  GetAllCommentsByPostPk,
   newComment,
   UpdateComment,
   DeleteComment,
