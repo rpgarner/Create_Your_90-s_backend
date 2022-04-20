@@ -12,6 +12,8 @@ module.exports = {
           about: "jane likes does",
           email: "demo@demo.com",
           passwordDigest: "1234",
+          picture:
+            "https://ntvb.tmsimg.com/assets/p183957_b_h11_ad.jpg?w=960&h=540",
           // createdAt: new Date(),
           // updatedAt: new Date(),
         },
@@ -22,6 +24,8 @@ module.exports = {
           about: "Micahel Jackson",
           email: "Michael@jackson.com",
           passwordDigest: "1234",
+          picture:
+            "https://ntvb.tmsimg.com/assets/p183957_b_h11_ad.jpg?w=960&h=540",
           // createdAt: new Date(),
           // updatedAt: new Date(),
         },
@@ -32,6 +36,8 @@ module.exports = {
           about: "I like cats",
           email: "catLover@demo.com",
           passwordDigest: "1234",
+          picture:
+            "https://ntvb.tmsimg.com/assets/p183957_b_h11_ad.jpg?w=960&h=540",
           // createdAt: new Date(),
           // updatedAt: new Date(),
         },
@@ -42,6 +48,8 @@ module.exports = {
           about: "Lets get dirty",
           email: "Steve@Jobs.com",
           passwordDigest: "1234",
+          picture:
+            "https://ntvb.tmsimg.com/assets/p183957_b_h11_ad.jpg?w=960&h=540",
           // createdAt: new Date(),
           // updatedAt: new Date(),
         },
@@ -52,6 +60,8 @@ module.exports = {
           about: "has really dry hands",
           email: "Barb@rocks.com",
           passwordDigest: "1234",
+          picture:
+            "https://ntvb.tmsimg.com/assets/p183957_b_h11_ad.jpg?w=960&h=540",
           // createdAt: new Date(),
           // updatedAt: new Date(),
         },
