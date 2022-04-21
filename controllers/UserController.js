@@ -49,6 +49,15 @@ const Register = async (req, res) => {
   }
 };
 
+const CheckSession = async (req, res) => {
+  try {
+  const { payload } = res.locals
+  res.send(payload);
+  } catch (error) {
+    throw error;
+  }
+}
+
 ////////////////////controller variables//////////////////
 
 const GetProfiles = async (req, res) => {
@@ -78,4 +87,5 @@ module.exports = {
   GetUserProfile,
   Login,
   Register,
+  CheckSession
 };
