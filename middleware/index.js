@@ -27,6 +27,7 @@ const verifyToken = (req, res, next) => {
     let payload = jwt.verify(token, APP_SECRET);
     if (payload) {
       res.locals.payload = payload
+      console.log("--------", payload)
       return next();
     }
   } catch (error) {
