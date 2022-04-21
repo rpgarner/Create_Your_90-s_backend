@@ -50,8 +50,9 @@ const Register = async (req, res) => {
 };
 
 const CheckSession = async (req, res) => {
+  console.log("--------------this is res.locals", res.locals)
   try {
-  const { payload } = res.locals
+  const { payload } = await res.locals
   res.send(payload);
   } catch (error) {
     throw error;
